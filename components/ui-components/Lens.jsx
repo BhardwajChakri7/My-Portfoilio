@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 export const Lens = ({
   children,
   zoomFactor = 1.5,
-  lensSize = 170,
+  lensSize = 150,
   isStatic = false,
   position = { x: 200, y: 150 },
   hovering,

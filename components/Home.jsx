@@ -1,6 +1,6 @@
 import { BackgroundRippleEffect } from "./ui-components/BackgroundRippleEffect";
 import ParticlesComponent from "./ui-components/ParticlesBg";
-import { Lens } from "./ui-components/Lens";
+import { ProfileWithLensEffect } from "./ProfileWithLensEffect";
 import { HoverBorderGradient } from "./ui-components/HoverBorderGradient";
 import { TextGenerateEffect } from "./ui-components/TextGenerateEffect";
 import RotatingText from "./ui-components/RotatingRoles";
@@ -98,7 +98,7 @@ export function Home() {
                   className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 resume-download-button"
                   onClick={() => {
                     const link = document.createElement("a");
-                    link.href = "/files/MyResume.pdf"; // 🔹 Path to your PDF (keep file inside /public/files/)
+                    link.href = "/files/my_resume.pdf"; // 🔹 Path to your PDF (keep file inside /public/files/)
                     link.download = "Bhardwaj_Resume.pdf"; // 🔹 File name when downloaded
                     link.click();
                   }}>
@@ -111,11 +111,7 @@ export function Home() {
           {/* Right: Profile Image */}
           <div className="relative mb-10 md:mb-0">
             <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-gray-300 shadow-[0_0_60px_-10px_#ffffff]">
-              <img
-                src="../images/my_photo.jpg"
-                alt="Profile"
-                className="object-cover w-full h-full"
-              />
+              <ProfileWithLensEffect />
             </div>
           </div>
         </div>
