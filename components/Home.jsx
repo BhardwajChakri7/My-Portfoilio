@@ -9,8 +9,8 @@ export function Home() {
       <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black snap-start">
         {/* Background Ripple Effect */}
         <div className="fade-ripple absolute inset-0">
-          <BackgroundRippleEffect />
-          {/* <ParticlesComponent /> */}
+          {/* <BackgroundRippleEffect /> */}
+          <ParticlesComponent />
         </div>
 
         {/* Hero Content */}
@@ -51,12 +51,12 @@ export function Home() {
               challenges with clarity and precision.
             </p>
             {/* Social Icons */}
-            <div class="flex space-x-3 social-icons">
+            <div className="flex space-x-3 social-icons">
               {/* Twitter/X Icon with Wing Animation */}
-              <div class="social-icons">
+              <div className="social-icons">
                 <a
                   href="https://github.com/BhardwajChakri7"
-                  class="social-icon github"
+                  className="social-icon github"
                   target="_blank"
                   rel="noopener noreferrer"
                   title="GitHub Profile">
@@ -70,7 +70,7 @@ export function Home() {
                 </a>
                 <a
                   href="https://www.linkedin.com/in/ganipineni-bhardwaj-naidu-5961a7376/"
-                  class="social-icon linkedin">
+                  className="social-icon linkedin">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -81,7 +81,7 @@ export function Home() {
                 </a>
                 <a
                   href="https://www.instagram.com/bhardwaj_chakri/"
-                  class="social-icon instagram">
+                  className="social-icon instagram">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
