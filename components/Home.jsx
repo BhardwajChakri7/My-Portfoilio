@@ -1,6 +1,8 @@
 import { BackgroundRippleEffect } from "./ui-components/BackgroundRippleEffect";
 import ParticlesComponent from "./ui-components/ParticlesBg";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { Lens } from "./ui-components/Lens";
+import { HoverBorderGradient } from "./ui-components/HoverBorderGradient";
+import { TextGenerateEffect } from "./ui-components/TextGenerateEffect";
 import RotatingText from "./ui-components/RotatingRoles";
 export function Home() {
   return (
@@ -90,6 +92,18 @@ export function Home() {
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.428.403a4.92 4.92 0 011.675 1.086 4.92 4.92 0 011.086 1.675c.163.459.347 1.259.403 2.428.058 1.266.07 1.645.07 4.849s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.403 2.428a4.92 4.92 0 01-1.086 1.675 4.92 4.92 0 01-1.675 1.086c-.459.163-1.259.347-2.428.403-1.266.058-1.645.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.428-.403a4.902 4.902 0 01-1.675-1.086 4.902 4.902 0 01-1.086-1.675c-.163-.459-.347-1.259-.403-2.428C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.056-1.17.24-1.97.403-2.428a4.902 4.902 0 011.086-1.675 4.902 4.902 0 011.675-1.086c.459-.163 1.259-.347 2.428-.403C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.77.131 4.671.319 3.758.665a7.07 7.07 0 00-2.545 1.66A7.07 7.07 0 00.665 4.87C.319 5.783.131 6.882.072 8.164.013 9.444 0 9.853 0 12s.013 2.556.072 3.836c.059 1.282.247 2.381.593 3.294a7.07 7.07 0 001.66 2.545 7.07 7.07 0 002.545 1.66c.913.346 2.012.534 3.294.593 1.28.059 1.689.072 3.836.072s2.556-.013 3.836-.072c1.282-.059 2.381-.247 3.294-.593a7.07 7.07 0 002.545-1.66 7.07 7.07 0 001.66-2.545c.346-.913.534-2.012.593-3.294.059-1.28.072-1.689.072-3.836s-.013-2.556-.072-3.836c-.059-1.282-.247-2.381-.593-3.294a7.07 7.07 0 00-1.66-2.545 7.07 7.07 0 00-2.545-1.66c-.913-.346-2.012-.534-3.294-.593C14.556.013 14.147 0 12 0zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z" />
                   </svg>
                 </a>
+                <HoverBorderGradient
+                  containerClassName="rounded-full"
+                  as="button"
+                  className="dark:bg-black bg-white text-black dark:text-white flex items-center space-x-2 resume-download-button"
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = "/files/MyResume.pdf"; // 🔹 Path to your PDF (keep file inside /public/files/)
+                    link.download = "Bhardwaj_Resume.pdf"; // 🔹 File name when downloaded
+                    link.click();
+                  }}>
+                  <span>Download Resume</span>
+                </HoverBorderGradient>
               </div>
             </div>
           </div>
@@ -111,7 +125,12 @@ export function Home() {
       <section
         id="projects"
         className="min-h-screen w-full flex items-center justify-center bg-neutral-900 text-white snap-start">
-        <h2 className="text-4xl font-bold">My Projects</h2>
+        <TextGenerateEffect
+          words="Oxygen gets you high. In a catastrophic emergency, we're
+        taking giant, panicked breaths. Suddenly you become euphoric, docile.
+        You accept your fate. It's all right here. Emergency water landing, six
+        hundred miles an hour. Blank faces, calm as Hindu cows "
+        />
       </section>
 
       <section
