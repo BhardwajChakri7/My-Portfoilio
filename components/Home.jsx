@@ -1,6 +1,8 @@
+import { motion } from "framer-motion";
+import { ProfileWithLensEffect } from "./ProfileWithLensEffect";
 import { BackgroundRippleEffect } from "./ui-components/BackgroundRippleEffect";
 import ParticlesComponent from "./ui-components/ParticlesBg";
-import { ProfileWithLensEffect } from "./ProfileWithLensEffect";
+import ShinyText from "./ui-components/ShinyText";
 import { HoverBorderGradient } from "./ui-components/HoverBorderGradient";
 import { TextGenerateEffect } from "./ui-components/TextGenerateEffect";
 import RotatingText from "./ui-components/RotatingRoles";
@@ -8,7 +10,9 @@ export function Home() {
   return (
     <main className="scroll-container">
       {/* ===== Hero Section ===== */}
-      <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black snap-start">
+      <section
+        className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black snap-start"
+        id="home">
         {/* Background Ripple Effect */}
         <div className="fade-ripple absolute inset-0">
           {/* <BackgroundRippleEffect /> */}
@@ -16,9 +20,15 @@ export function Home() {
         </div>
 
         {/* Hero Content */}
+
         <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-center md:justify-between gap-8 md:gap-12 w-4/5 mx-auto px-6 md:px-20 mt-20">
           {/* Left: Text */}
-          <div className="max-w-xl text-center md:text-left">
+          <motion.div
+            className="max-w-xl text-center md:text-left"
+            initial={{ opacity: 0, x: -200 }} // Starts invisible and 100px to the left
+            animate={{ opacity: 1, x: 0 }} // Fades in and moves to its final position
+            transition={{ duration: 0.8, ease: "easeOut" }} // Animation timing
+          >
             <h2
               className="text-4xl md:text-6xl font-bold leading-tight mb-2 
               bg-gradient-to-t from-white to-gray-600 text-transparent bg-clip-text">
@@ -102,18 +112,27 @@ export function Home() {
                     link.download = "Bhardwaj_Resume.pdf"; // 🔹 File name when downloaded
                     link.click();
                   }}>
-                  <span>Download Resume</span>
+                  <ShinyText
+                    text="Download Resume"
+                    disabled={false}
+                    speed={3}
+                    className="custom-class"
+                  />
                 </HoverBorderGradient>
               </div>
             </div>
-          </div>
-
+          </motion.div>
           {/* Right: Profile Image */}
-          <div className="relative mb-10 md:mb-0">
+          <motion.div
+            className="relative mb-10 md:mb-0"
+            initial={{ opacity: 0, x: 200 }} // Starts invisible and 100px to the right
+            animate={{ opacity: 1, x: 0 }} // Fades in and moves to its final position
+            transition={{ duration: 0.8, ease: "easeOut" }} // Animation timing
+          >
             <div className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-gray-300 shadow-[0_0_60px_-10px_#ffffff]">
               <ProfileWithLensEffect />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
