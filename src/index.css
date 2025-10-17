@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
 html {
+  height: 100%;
+  margin: 0;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 .scroll-container {
@@ -17,6 +20,16 @@ html {
 
 .scroll-container::-webkit-scrollbar {
   display: none;
+}
+
+/* 👇 Make each section fill the viewport and snap perfectly */
+.scroll-section {
+  height: 100vh;
+  scroll-snap-align: start; /* <— the magic line */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
 /* Full screen ripple container */
@@ -256,10 +269,11 @@ html {
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 12px 22px;
+  padding: 0px 22px;
+  height: 50px;
   border-radius: 9999px;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
   letter-spacing: 0.3px;
   cursor: pointer;
   border: none;
@@ -268,4 +282,34 @@ html {
   transition: all 0.3s ease;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/*Shiny Text */
+.shiny-text {
+  color: transparent; /* Changed from #ffffff to transparent */
+  background: linear-gradient(
+    120deg,
+    #ffffff 40%,
+    rgba(123, 123, 123, 0.6) 50%,
+    /* A slightly softer gray for the shine */ #ffffff 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* This class correctly disables the animation when applied */
+.shiny-text.disabled {
+  animation: none;
 }

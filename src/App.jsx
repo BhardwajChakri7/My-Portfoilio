@@ -1,17 +1,33 @@
-import { Component } from "react";
-import "./index.css";
-import Navbar from "../components/Navbar";
-import Home from "../components/Home";
+// In your App.jsx
 
-class App extends Component {
-  render() {
-    return (
-      <div className="relative z-0 main-container">
-        <Navbar />
+import { useEffect } from "react"; // No useRef needed for this fix
+import { Home } from "../components/Home";
+import { About } from "../components/About";
+import Navbar from "../components/Navbar";
+
+function App() {
+  // Replace your previous useEffect with this one
+  useEffect(() => {
+    // 1. Tell the browser to let us handle scrolling on page load
+    if (history.scrollRestoration) {
+      history.scrollRestoration = "manual";
+    }
+
+    // 2. Manually scroll the window to the very top
+    window.scrollTo(0, 0);
+  }, []); // Empty array still ensures this runs only once on mount
+
+  return (
+    <>
+      <Navbar />
+      {/* The ref is no longer needed on the main element for this fix */}
+      <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
         <Home />
-      </div>
-    );
-  }
+        <About />
+        {/* ... other sections go here ... */}
+      </main>
+    </>
+  );
 }
 
 export default App;
