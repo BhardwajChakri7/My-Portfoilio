@@ -139,13 +139,8 @@ export function Home() {
       {/* ===== Next Section Example ===== */}
       <section
         id="projects"
-        className="min-h-screen w-full flex items-center justify-center bg-neutral-900 text-white snap-start">
-        <TextGenerateEffect
-          words="Oxygen gets you high. In a catastrophic emergency, we're
-        taking giant, panicked breaths. Suddenly you become euphoric, docile.
-        You accept your fate. It's all right here. Emergency water landing, six
-        hundred miles an hour. Blank faces, calm as Hindu cows "
-        />
+        className="min-h-screen w-full flex items-center justify-center bg-neutral-900 text-white snap-start pl-40 pr-40">
+        <TextGenerateEffect words="Sorry to say this I am building my portfolio part by part with the best UI experience, If you want to know about me check my resume" />
       </section>
 
       <section
