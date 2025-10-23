@@ -23,7 +23,6 @@ function App() {
       {/* The ref is no longer needed on the main element for this fix */}
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory">
         <Home />
-        <About />
         {/* ... other sections go here ... */}
       </main>
     </>
