@@ -8,7 +8,7 @@ import { TextGenerateEffect } from "./ui-components/TextGenerateEffect";
 import RotatingText from "./ui-components/RotatingRoles";
 export function Home() {
   return (
-    <main className="scroll-container">
+    <main>
       {/* ===== Hero Section ===== */}
       <section
         className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden bg-black snap-start"

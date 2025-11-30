@@ -3,37 +3,6 @@
 html {
   height: 100%;
   margin: 0;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-}
-
-.scroll-container {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  height: 100vh;
-
-  /* Firefox */
-  scrollbar-width: none;
-  /* IE and old Edge */
-  -ms-overflow-style: none;
-}
-
-/* WebKit (Chrome, Safari, newer Edge) */
-.scroll-container::-webkit-scrollbar {
-  display: none;
-  width: 0; /* Ensures no width is reserved for the scrollbar */
-  height: 0; /* Ensures no height is reserved for the scrollbar */
-}
-
-/* 👇 Make each section fill the viewport and snap perfectly */
-.scroll-section {
-  height: 100vh;
-  scroll-snap-align: start; /* <— the magic line */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem;
 }
 
 /* Full screen ripple container */
@@ -78,11 +47,11 @@ html {
   }
 }
 
-.animate-scroll {
+/* .animate-scroll {
   display: inline-block;
   white-space: nowrap;
   animation: scroll 15s linear infinite;
-}
+} */
 
 /* Text Rotating Animation */
 .text-rotate {
