@@ -13,13 +13,17 @@ html {
   overflow-y: scroll;
   height: 100vh;
 
-  /* Hide scrollbar visually */
+  /* Firefox */
   scrollbar-width: none;
+  /* IE and old Edge */
   -ms-overflow-style: none;
 }
 
+/* WebKit (Chrome, Safari, newer Edge) */
 .scroll-container::-webkit-scrollbar {
   display: none;
+  width: 0; /* Ensures no width is reserved for the scrollbar */
+  height: 0; /* Ensures no height is reserved for the scrollbar */
 }
 
 /* 👇 Make each section fill the viewport and snap perfectly */
