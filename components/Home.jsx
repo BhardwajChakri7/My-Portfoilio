@@ -28,7 +28,7 @@ const Home = () => {
           transition={{ duration: 0.8, ease: "easeOut" }} // Animation timing
         >
           <h2
-            className="text-4xl md:text-6xl font-bold leading-tight mb-2 
+            className="text-4xl md:text-6xl font-bold leading-tight mb-2
               bg-gradient-to-t from-white to-gray-600 text-transparent bg-clip-text">
             Hi there<span className="inline-block">⚡</span>
           </h2>
